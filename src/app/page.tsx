@@ -118,11 +118,11 @@ export default function DossieWizard() {
         {/* PASSO 1: CAPA */}
         {step === 1 && (
           <div className="space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <div className="text-center space-y-6">
-              <h1 className="text-4xl md:text-6xl uppercase tracking-[0.25em] font-extralight border-y border-white/20 py-10 md:py-16 inline-block px-8 md:px-20 leading-tight">
+            <div className="text-center space-y-4 md:space-y-6">
+              <h1 className="text-2xl sm:text-3xl md:text-6xl uppercase tracking-[0.15em] md:tracking-[0.25em] font-extralight border-y border-white/20 py-8 md:py-16 inline-block px-4 md:px-20 leading-tight w-full md:w-auto">
                 DOSSIÊ ESTRATÉGICO
               </h1>
-              <p className="italic text-white/50 tracking-widest uppercase text-xs md:text-sm">Consultoria de Reposicionamento</p>
+              <p className="italic text-white/50 tracking-widest uppercase text-[10px] md:text-sm">Consultoria de Reposicionamento</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 pt-8">
               <Input label="Nome do cliente" value={formData.cliente} onChange={e => setFormData({...formData, cliente: e.target.value})} placeholder="Ex: Lucas Silva" />
