@@ -37,10 +37,10 @@ const Select = ({ label, options, ...props }: { label: string; options: string[]
 );
 
 const ImageUpload = ({ label, preview, setPreview }: { label: string; preview: string | null; setPreview: (val: string | null) => void }) => {
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
       setPreview(URL.createObjectURL(file));
     }
