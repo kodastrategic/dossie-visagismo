@@ -50,7 +50,7 @@ const ImageUpload = ({ label, preview, setPreview }: { label: string; preview: s
     <div className="mb-4 w-full">
       <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2 block print:hidden">{label}</label>
       <div 
-        onClick={() => fileInputRef.current.click()}
+        onClick={() => fileInputRef.current?.click()}
         className={`relative border-2 border-dashed border-white/20 aspect-[3/4] flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all hover:bg-white/5 print:border-none print:aspect-auto print:max-h-[150px] ${preview ? 'border-solid border-white/40' : ''}`}
       >
         {preview ? (
