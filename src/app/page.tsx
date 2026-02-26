@@ -81,13 +81,13 @@ export default function DossieWizard() {
     // ... outros campos podem ser adicionados aqui para bind no PDF real
   });
 
-  const [previews, setPreviews] = useState({
+  const [previews, setPreviews] = useState<{ [key: string]: string | null }>({
     main: null,
     c1: null, c2: null, c3: null,
     b1: null, b2: null
   });
 
-  const [products, setProducts] = useState([
+  const [products, setProducts] = useState<{ id: number; name: string; desc: string; photo: string | null }[]>([
     { id: Date.now(), name: '', desc: '', photo: null }
   ]);
 
