@@ -92,8 +92,8 @@ export default function DossieWizard() {
   ]);
 
   const addProduct = () => products.length < 6 && setProducts([...products, { id: Date.now(), name: '', desc: '', photo: null }]);
-  const removeProduct = (id) => products.length > 1 && setProducts(products.filter(p => p.id !== id));
-  const updateProduct = (id, field, value) => setProducts(products.map(p => p.id === id ? { ...p, [field]: value } : p));
+  const removeProduct = (id: number) => products.length > 1 && setProducts(products.filter(p => p.id !== id));
+  const updateProduct = (id: number, field: string, value: string | null) => setProducts(products.map(p => p.id === id ? { ...p, [field]: value } : p));
 
   const nextStep = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); setStep(prev => Math.min(prev + 1, totalSteps)); };
   const prevStep = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); setStep(prev => Math.max(prev - 1, 1)); };
