@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 
 // --- COMPONENTES DE UI CUSTOMIZADOS (TEMA DARK + RESPONSIVO) ---
 
-const Input = ({ label, ...props }) => (
+const Input = ({ label, ...props }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) => (
   <div className="flex flex-col gap-1 mb-6 print:mb-2">
     <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 print:text-black">{label}</label>
     <input 
@@ -14,7 +14,7 @@ const Input = ({ label, ...props }) => (
   </div>
 );
 
-const Textarea = ({ label, ...props }) => (
+const Textarea = ({ label, ...props }: { label: string } & React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <div className="flex flex-col gap-1 mb-6 print:mb-2">
     <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 print:text-black">{label}</label>
     <textarea 
@@ -24,7 +24,7 @@ const Textarea = ({ label, ...props }) => (
   </div>
 );
 
-const Select = ({ label, options, ...props }) => (
+const Select = ({ label, options, ...props }: { label: string; options: string[] } & React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <div className="flex flex-col gap-1 mb-6 print:mb-2">
     <label className="text-[10px] uppercase tracking-widest font-bold text-gray-400 print:text-black">{label}</label>
     <select 
@@ -36,7 +36,7 @@ const Select = ({ label, options, ...props }) => (
   </div>
 );
 
-const ImageUpload = ({ label, preview, setPreview }) => {
+const ImageUpload = ({ label, preview, setPreview }: { label: string; preview: string | null; setPreview: (val: string | null) => void }) => {
   const fileInputRef = useRef(null);
 
   const handleImageChange = (e) => {
